@@ -4,8 +4,6 @@
 
 ## Purpose
 
-This repository is based on the [Full Stack FastAPI Template](https://github.com/fastapi/full-stack-fastapi-template). It provides authentication, user management, a React frontend, and a FastAPI backend.
-
 **[Product name]:** _[One-line description of what you are building]_
 
 **[How you use the template]:** _[e.g. extend the stack with domain workflows, replace demo features, etc.]_
@@ -46,7 +44,7 @@ _[What pain, gap, or opportunity does this product address? Who feels it today?]
 
 ## Principles
 
-1. **Trunk-based delivery** — Small PRs to `main`; see [branching strategy](branching-strategy.md).
+1. **Develop-based delivery** — Small PRs to `develop`; deploy from tags on `develop`; see [branching strategy](branching-strategy.md).
 2. **Harness before heroics** — Load vision, rules, and verification steps before coding; see [harness strategy](ai-workflow/harness-strategy.md).
 3. **Human ownership** — AI coding assistants and coding agents accelerate work; humans own merges and production behavior.
 4. **Minimal diffs** — Prefer focused changes that match existing FastAPI / React patterns in this template.

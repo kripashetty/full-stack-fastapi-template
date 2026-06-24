@@ -42,8 +42,9 @@ _[Future phase — polish, scale, or optional enhancements]_
 
 | Item | Completed | PR / notes |
 |------|-----------|------------|
-| Template baseline (Full Stack FastAPI Template) | — | Upstream on `main` |
-| _[Shipped item]_ | _[YYYY-MM-DD]_ | _[PR link]_ |
+
+ _[Shipped item]_ | _[YYYY-MM-DD]_ | _[PR link]_ |
+
 
 ---
 
