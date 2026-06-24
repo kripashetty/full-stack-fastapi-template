@@ -164,8 +164,8 @@ Follow `docs/branching-strategy.md`. Default patterns:
 
 | Type | Pattern | Example |
 |------|---------|---------|
-| Feature | `feature/<short-description>` | `feature/design-review-upload` |
-| Fix | `fix/<short-description>` | `fix/login-redirect-loop` |
+| Feature | `feature/<short-description>` | `feature/user-onboarding` |
+| Fix | `fix/<short-description>` | `fix/token-refresh` |
 | Chore / docs | `chore/<short-description>` | `chore/project-setup` |
 
 Use lowercase kebab-case. Keep names short but recognizable in `git branch` output.
@@ -189,8 +189,8 @@ Use [Conventional Commits](https://www.conventionalcommits.org/) style:
 
 **Examples:**
 
-- `docs: establish project foundation for Engineering Design Review Assistant`
-- `feat(reviews): add design document upload endpoint`
+- `docs: establish project foundation and harness templates`
+- `feat(api): add resource upload endpoint`
 - `fix(auth): handle expired refresh tokens`
 
 The PR title should match the issue outcome, not the issue number alone.

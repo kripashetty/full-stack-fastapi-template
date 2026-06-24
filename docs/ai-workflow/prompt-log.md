@@ -1,12 +1,12 @@
-# Prompt Log
+# Prompt Log (Template)
 
-Audit trail for significant AI-assisted and harness-engineering sessions on the Engineering Design Review Assistant.
+> **Use this file** to record significant AI-assisted and harness-engineering sessions. The logging process is project-agnostic; entries describe work on *your* product (see [vision](../vision.md)).
 
 ## When to log
 
 | Event | Log? |
 |-------|------|
-| Foundation / milestone issues (e.g. Issue #1) | Yes |
+| Foundation / milestone issues | Yes |
 | New reusable pattern documented in `docs/` or `.skills/` | Yes |
 | Failed agent approach worth avoiding later | Yes |
 | Routine one-line fixes | No |
@@ -33,16 +33,16 @@ Append a new entry at the **top** of the **Log** section (newest first). Use the
 
 ## Log
 
-### 2026-06-23 — Project foundation (Issue #1)
+### YYYY-MM-DD — <example: project foundation>
 
-- **Issue / PR:** [Issue #1](https://github.com/kripashetty/full-stack-fastapi-template/issues/1)
-- **Tool:** Coding agent (agentic workflow)
-- **Objective:** Establish `docs/` foundation and `.skills/` reusable workflows before application code changes.
-- **Context loaded:** Issue #1 body, `.skills/issue-author.md`, `.skills/issue-implementation.md`, upstream CONTRIBUTING.md
-- **Prompt summary:** Implement Issue #1 per repository workflow — vision, roadmap, branching, AI rules, harness strategy, prompt log, and agent-agnostic skills; docs/skills only.
-- **Outcome:** Shipped (pending PR)
-- **Verification:** Manual review of markdown; `git diff` scoped to `docs/` and `.skills/`; link paths checked against file layout
-- **Lessons:** Centralizing issue author/implementation in `.skills/` keeps CLI and IDE agents aligned without tool-specific config.
+- **Issue / PR:** _[#N or link]_
+- **Tool:** _[e.g. coding agent, CLI-based assistant, manual]_
+- **Objective:** _[e.g. Establish docs/ and .skills/ before feature work]_
+- **Context loaded:** _[e.g. issue body, .skills/issue-implementation.md]_
+- **Prompt summary:** _[Paraphrase; no secrets]_
+- **Outcome:** _[Shipped / partial / abandoned]_
+- **Verification:** _[e.g. link check, git diff scope, test commands]_
+- **Lessons:** _[What to repeat or avoid]_
 
 ## Related
 

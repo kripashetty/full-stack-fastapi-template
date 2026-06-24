@@ -1,6 +1,6 @@
 # AI Coding Rules
 
-Agent-agnostic rules for humans, AI coding assistants, and coding agents working on the Engineering Design Review Assistant.
+Agent-agnostic rules for humans, AI coding assistants, and coding agents working in this repository.
 
 **Terminology** (used across `docs/ai-workflow/` and `.skills/`):
 
@@ -34,7 +34,7 @@ No single vendor is required. Supported workflows include IDE-based assistants, 
 - **Stay within issue scope** — Respect out-of-scope sections on GitHub issues.
 - **Minimal diffs** — Change only what the issue requires; match existing patterns in `backend/` and `frontend/`.
 - **No unrelated refactors** — Fix the requested behavior; defer cleanup to separate issues.
-- **Allowed paths per issue** — For foundation work: `docs/` and `.skills/` only unless the issue says otherwise.
+- **Respect issue path constraints** — e.g. docs-only issues stay under `docs/` and `.skills/` unless the issue says otherwise.
 
 ## Stack-specific conventions
 
@@ -55,9 +55,10 @@ No single vendor is required. Supported workflows include IDE-based assistants, 
 
 ### Documentation and skills
 
-- Product-specific language for the Design Review Assistant — not generic template copy
-- Cross-link [vision](../vision.md), [roadmap](../roadmap.md), [harness strategy](harness-strategy.md), and [.skills/](../../.skills/issue-implementation.md)
-- Agent-agnostic wording; optional tool names as examples only
+- **Product-specific content** belongs in [vision](../vision.md) and [roadmap](../roadmap.md) — customize those templates for your product.
+- **Harness content** (`docs/ai-workflow/`, `.skills/`) stays project-agnostic and reusable as a base template.
+- Cross-link vision, roadmap, [harness strategy](harness-strategy.md), and [.skills/](../../.skills/issue-implementation.md).
+- Agent-agnostic wording; optional tool names as examples only.
 
 ## Agentic workflow
 
@@ -65,6 +66,7 @@ No single vendor is required. Supported workflows include IDE-based assistants, 
 2. Load [vision](../vision.md), [branching strategy](../branching-strategy.md), this file
 3. Plan → implement smallest complete change → verify → PR
 4. Log outcome in [prompt-log.md](prompt-log.md) when required by the issue
+5. For review feedback: follow [.skills/pr-review-resolution.md](../../.skills/pr-review-resolution.md)
 
 ## Pre-merge review checklist
 
@@ -82,3 +84,4 @@ No single vendor is required. Supported workflows include IDE-based assistants, 
 - [Prompt log](prompt-log.md)
 - [Issue author skill](../../.skills/issue-author.md)
 - [Issue implementation skill](../../.skills/issue-implementation.md)
+- [PR review resolution skill](../../.skills/pr-review-resolution.md)

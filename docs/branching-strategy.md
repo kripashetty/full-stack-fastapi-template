@@ -1,6 +1,6 @@
 # Branching Strategy
 
-Trunk-based workflow for the Engineering Design Review Assistant fork.
+Trunk-based workflow for this repository.
 
 ## Trunk
 
@@ -13,7 +13,7 @@ Trunk-based workflow for the Engineering Design Review Assistant fork.
 | Prefix | Use | Example |
 |--------|-----|---------|
 | `feature/` | New capability or docs milestone | `feature/project-setup` |
-| `fix/` | Bug fix | `fix/review-status-transition` |
+| `fix/` | Bug fix | `fix/auth-redirect` |
 | `chore/` | Tooling, deps, non-user-facing maintenance | `chore/sync-upstream` |
 
 Use lowercase kebab-case after the prefix. Match the **Suggested branch name** on GitHub issues when provided.
@@ -25,17 +25,17 @@ Use lowercase kebab-case after the prefix. Match the **Suggested branch name** o
 3. Implement per issue scope; follow [AI coding rules](ai-workflow/ai-coding-rules.md)
 4. Run verification (see [harness strategy](ai-workflow/harness-strategy.md))
 5. Push and open PR to `main`
-6. Address review; ensure CI passes
+6. Address review via [.skills/pr-review-resolution.md](../.skills/pr-review-resolution.md); ensure CI passes
 7. Merge (squash or merge commit per repo settings)
 8. Delete branch after merge
 
 ## Pull request expectations
 
-- **Title:** Conventional Commits style, e.g. `feat(reviews): add submission API`
+- **Title:** Conventional Commits style, e.g. `feat(api): add resource endpoint`
 - **Description:** Summary, test plan, `Fixes #<issue>` when applicable — see [.skills/issue-implementation.md](../.skills/issue-implementation.md)
 - **Scope:** One issue or tightly related change set
 - **Checks:** Backend tests, frontend lint/tests, Playwright when UI changes — CI is the final harness
-- **Docs:** Update `docs/` when behavior or workflow changes
+- **Docs:** Update `docs/vision.md` or `docs/roadmap.md` for product changes; harness docs only when workflow changes
 
 ## Hotfix process
 
@@ -46,13 +46,13 @@ Use lowercase kebab-case after the prefix. Match the **Suggested branch name** o
 
 ## Upstream sync (optional)
 
-This fork tracks [fastapi/full-stack-fastapi-template](https://github.com/fastapi/full-stack-fastapi-template).
+If this repo tracks [fastapi/full-stack-fastapi-template](https://github.com/fastapi/full-stack-fastapi-template) or another upstream:
 
 ```bash
-git remote add upstream https://github.com/fastapi/full-stack-fastapi-template.git  # once
+git remote add upstream <upstream-url>  # once
 git fetch upstream
 git checkout main
-git merge upstream/master   # or upstream/main — match upstream default
+git merge upstream/<default-branch>
 # Resolve conflicts; run full test harness
 ```
 
@@ -65,3 +65,4 @@ git merge upstream/master   # or upstream/main — match upstream default
 - [Vision](vision.md)
 - [Roadmap](roadmap.md)
 - [Issue implementation skill](../.skills/issue-implementation.md)
+- [PR review resolution skill](../.skills/pr-review-resolution.md)
