@@ -1,55 +1,49 @@
-# Roadmap — Engineering Design Review Assistant
+# Roadmap (Template)
 
-Phased plan for this fork. Update issue/PR links as work completes.
+> **Customize this file** for your product. Update issue/PR links as work completes. Harness and skill files in `docs/ai-workflow/` and `.skills/` stay reusable across projects.
 
 See [vision](vision.md) for product goals and [branching strategy](branching-strategy.md) for how we ship.
 
 ## Now
 
-Foundation and engineering system (no application feature code yet).
+_[Current phase — what you are actively working on]_
 
 | Item | Status | Tracking |
 |------|--------|----------|
-| Product vision | In progress | [docs/vision.md](vision.md) |
-| Roadmap | In progress | This document |
-| Branching strategy | In progress | [docs/branching-strategy.md](branching-strategy.md) |
-| AI workflow docs | In progress | [docs/ai-workflow/](ai-workflow/ai-coding-rules.md) |
-| Reusable agent skills | In progress | [.skills/](../.skills/issue-author.md) |
-| Foundation issue | Open | [Issue #1](https://github.com/kripashetty/full-stack-fastapi-template/issues/1) |
+| Product vision | Not started / In progress / Done | [docs/vision.md](vision.md) |
+| Roadmap | Not started / In progress / Done | This document |
+| Branching strategy | Not started / In progress / Done | [docs/branching-strategy.md](branching-strategy.md) |
+| AI workflow docs | Not started / In progress / Done | [docs/ai-workflow/](ai-workflow/ai-coding-rules.md) |
+| Reusable agent skills | Not started / In progress / Done | [.skills/](../.skills/issue-author.md) |
+| _[Milestone issue]_ | Open / Closed | _[Issue #N or link]_ |
 
-**Exit criteria for Now:** All Issue #1 acceptance criteria met; contributors can author and implement issues using `.skills/` without tool-specific setup.
+**Exit criteria for Now:** _[What must be true before moving to Next]_
 
 ## Next
 
-Core domain and review workflow MVP.
+_[Upcoming phase — next logical capabilities after Now]_
 
 | Item | Notes |
 |------|-------|
-| Domain model | Design review entity, status enum, relationships to users |
-| API — design reviews | CRUD + status transitions (FastAPI) |
-| Frontend — submission flow | Create and list design review requests |
-| Frontend — reviewer queue | Assigned reviews, comment thread (basic) |
-| Database migrations | Alembic migrations for new tables |
-| Tests | API and Playwright coverage for happy paths |
+| _[Work item 1]_ | _[Brief description]_ |
+| _[Work item 2]_ | _[Brief description]_ |
+| _[Work item 3]_ | _[Brief description]_ |
 
 ## Later
 
-Polish, intelligence, and scale.
+_[Future phase — polish, scale, or optional enhancements]_
 
 | Item | Notes |
 |------|-------|
-| Notifications | Email on assignment and status change (extend existing mail stack) |
-| Design attachments | File upload and versioning |
-| Review templates | Checklists per design type (API, infra, security) |
-| Analytics | Time-in-review, reviewer load |
-| Optional LLM assist | Summarize threads or suggest checklist items — human-in-the-loop only |
-| Upstream sync | Selective merges from `fastapi/full-stack-fastapi-template` |
+| _[Work item 1]_ | _[Brief description]_ |
+| _[Work item 2]_ | _[Brief description]_ |
 
 ## Completed
 
 | Item | Completed | PR / notes |
 |------|-----------|------------|
-| Fork from Full Stack FastAPI Template | — | Upstream baseline on `main` |
+| Template baseline (Full Stack FastAPI Template) | — | Upstream on `main` |
+| _[Shipped item]_ | _[YYYY-MM-DD]_ | _[PR link]_ |
 
 ---
 
