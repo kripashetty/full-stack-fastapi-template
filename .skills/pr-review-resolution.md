@@ -1,4 +1,4 @@
-# PR Review Resolution
+# PR Review Resolution Skill
 
 Address pull request review feedback and return the branch to merge-ready state.
 
