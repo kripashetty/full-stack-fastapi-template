@@ -58,7 +58,7 @@ GitHub Actions on PR (`test-backend`, `playwright`, `test-docker-compose`, etc.)
 
 ## Optional assistant configuration
 
-Tool-specific config (e.g. editor rules directories) is **optional** and not required to contribute. This repository’s harness is defined by version-controlled `docs/` and `.skills/` — any assistant that can read files and run shell commands can participate.
+Tool-specific config (e.g. editor rules directories) is **optional** and not required to contribute. This repository's harness is defined by version-controlled `docs/` and `.skills/` — any assistant that can read files and run shell commands can participate.
 
 ## Task sizing
 
@@ -71,7 +71,7 @@ Tool-specific config (e.g. editor rules directories) is **optional** and not req
 | Anti-pattern | Why it fails |
 |--------------|--------------|
 | Edit without reading issue out-of-scope | Scope creep, rejected PRs |
-| Skip verification because “docs only” | Broken links, wrong paths, inconsistent terminology |
+| Skip verification because "docs only" | Broken links, wrong paths, inconsistent terminology |
 | Vendor-specific prompts only in chat | Knowledge not reusable; use `.skills/` and `docs/` |
 | Giant agent diffs without human review | Security and quality risk |
 | Secrets in prompts or commits | Credential exposure |
