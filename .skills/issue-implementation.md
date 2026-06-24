@@ -95,7 +95,7 @@ Update documentation when the change affects:
 
 For docs-only or skills-only issues:
 
-- Use product-specific language for the Engineering Design Review Assistant
+- Use product-specific language from [docs/vision.md](../docs/vision.md) — not generic template copy in feature code or customized vision/roadmap
 - Cross-link related docs and `.skills/` files
 - Keep agent-agnostic terminology (no required vendor or IDE)
 
@@ -155,7 +155,7 @@ Use [Conventional Commits](https://www.conventionalcommits.org/):
 ```
 docs: add harness strategy for agent-agnostic workflows
 
-feat(reviews): add API endpoint to create design review requests
+feat(api): add resource creation endpoint
 
 fix(auth): reject expired tokens in refresh flow
 ```
@@ -199,7 +199,7 @@ Fixes #<issue-number>
 ### Review readiness
 
 - PR should be reviewable in one sitting when possible
-- Respond to review comments with fixes or documented rationale
+- Respond to review comments with fixes or documented rationale; follow [pr-review-resolution.md](pr-review-resolution.md)
 - Re-run harness checks after each revision
 
 ## Completion checklist
