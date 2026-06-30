@@ -13,7 +13,7 @@ Harness engineering means **feedforward**: load context and constraints *before*
 | **Context** | Product intent, scope, conventions | [vision](../vision.md), GitHub issues, [roadmap](../roadmap.md) |
 | **Tools** | Edit, test, lint, PR | Git, Docker Compose, `scripts/test.sh`, CI workflows |
 | **Constraints** | Scope boundaries, security, style | Issue out-of-scope, [AI coding rules](ai-coding-rules.md), [branching strategy](../branching-strategy.md) |
-| **Verification** | Prove correctness before merge | Local commands below, [CI on PR](#ci-as-final-harness) |
+| **Verification** | Prove correctness before merge | Local commands below, [developer onboarding](developer-onboarding.md#verification-ci-temporarily-disabled) |
 | **Skills** | Repeatable workflows | [.skills/issue-author.md](../../.skills/issue-author.md), [.skills/issue-implementation.md](../../.skills/issue-implementation.md), [.skills/pre-pr-readiness.md](../../.skills/pre-pr-readiness.md), [.skills/pr-review-resolution.md](../../.skills/pr-review-resolution.md) |
 
 ## Supported workflows
@@ -85,7 +85,7 @@ Recommendations are **optional but encouraged** — they feed forward into bette
 | Issue scope interpretation | Approve plan when ambiguous | Propose plan; ask before expanding scope |
 | Pre-PR readiness report | Review and approve before commit/PR | Produce report per pre-pr-readiness skill |
 | Commit / push / open PR | Explicit approval when workflow requires it | Prepare changes locally; wait for approval |
-| Merge to integration branch | Approve after review + CI green | Never merge without authorization |
+| Merge to integration branch | Approve after review + local verification | Never merge without authorization |
 | Production / deployment | Own release decisions | Document deploy steps only |
 
 **Default rule:** Agents accelerate editing and verification; humans own commits, merges, and production behavior.
@@ -108,6 +108,10 @@ Recommendations are **optional but encouraged** — they feed forward into bette
 
 Run commands relevant to the change:
 
+### Verification harness (CI temporarily disabled)
+
+GitHub Actions CI is **temporarily disabled**. Until workflows are restored, **local verification is required** before merge:
+
 | Change type | Verification |
 |-------------|--------------|
 | **Docs / skills only** | Review markdown; check relative links; `git diff` scope under `docs/`, `.skills/`, `.github/` |
@@ -115,10 +119,6 @@ Run commands relevant to the change:
 | **Frontend** | Biome lint; unit tests; Playwright when UI flows change |
 | **Full stack** | `scripts/test.sh` or `scripts/test-local.sh` |
 | **All changes** | `uv run prek run --all-files` before PR |
-
-### CI as final harness
-
-GitHub Actions on PR ([`.github/workflows/ci.yml`](../workflows/ci.yml): Ruff + backend tests; plus existing workflows for pre-commit, Playwright, Docker Compose when applicable) are authoritative. Local passes do not replace CI green.
 
 ## Optional assistant configuration
 
