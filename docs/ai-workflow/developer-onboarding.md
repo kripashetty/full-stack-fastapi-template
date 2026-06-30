@@ -21,7 +21,7 @@ Each stage maps to a skill or doc. Load the referenced file before starting that
 | Implementation | [.skills/issue-implementation.md](../../.skills/issue-implementation.md) | Focused diff satisfying acceptance criteria |
 | Pre-PR readiness | [.skills/pre-pr-readiness.md](../../.skills/pre-pr-readiness.md) | Readiness report before commit / PR |
 | PR review | [.skills/pr-review-resolution.md](../../.skills/pr-review-resolution.md) | Address feedback; return to merge-ready |
-| Merge | [branching strategy](../branching-strategy.md) | Squash/merge to integration branch after CI green |
+| Merge | [branching strategy](../branching-strategy.md) | Squash/merge to integration branch after local verification |
 
 ---
 
@@ -100,7 +100,7 @@ Use [.github/pull_request_template.md](../../.github/pull_request_template.md) w
 **Doc:** [branching strategy](../branching-strategy.md)
 
 1. PR targets **`develop/design-review-assistant`** (not `main`).
-2. All CI checks green (see [CI workflows](#ci-workflows)).
+2. Local verification complete (see [Verification](#verification-ci-temporarily-disabled)).
 3. Required human reviews complete.
 4. Merge (squash or merge commit per repo settings).
 5. Delete the feature branch after merge.
@@ -153,18 +153,18 @@ If hooks modify files, stage the fixes and commit again.
 
 See [development.md](../../development.md) for additional pre-commit details.
 
-### CI workflows
+### Verification (CI temporarily disabled)
 
-Pull requests run [.github/workflows/ci.yml](../../.github/workflows/ci.yml):
+GitHub Actions CI workflows are **temporarily disabled**. Run verification locally before opening or merging a PR:
 
-| Job | Checks |
-|-----|--------|
-| `ruff` | Ruff lint and format (via pre-commit hooks) |
-| `backend-tests` | Backend test suite with coverage |
+| Check | Command |
+|-------|---------|
+| Lint & format | `cd backend && uv run ruff check --force-exclude . && uv run ruff format --check --force-exclude .` |
+| Pre-commit | `uv run prek run --all-files` (from repo root) |
+| Backend tests | `bash ./scripts/test.sh` |
+| Design tests only | `docker compose exec backend bash scripts/tests-start.sh tests/api/routes/test_designs.py -v` |
 
-Additional workflows (Playwright, Docker Compose, etc.) run when relevant paths change. CI is the **final harness** — local passes do not replace CI green.
-
-The CI workflow is structured for future jobs (type checking, frontend validation) — see commented placeholders in the workflow file.
+Re-enable CI by restoring workflows under `.github/workflows/` when the pipeline is ready.
 
 ---
 
