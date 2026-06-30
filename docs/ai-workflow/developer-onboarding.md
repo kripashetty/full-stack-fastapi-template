@@ -21,7 +21,7 @@ Each stage maps to a skill or doc. Load the referenced file before starting that
 | Implementation | [.skills/issue-implementation.md](../../.skills/issue-implementation.md) | Focused diff satisfying acceptance criteria |
 | Pre-PR readiness | [.skills/pre-pr-readiness.md](../../.skills/pre-pr-readiness.md) | Readiness report before commit / PR |
 | PR review | [.skills/pr-review-resolution.md](../../.skills/pr-review-resolution.md) | Address feedback; return to merge-ready |
-| Merge | [branching strategy](../branching-strategy.md) | Squash/merge to integration branch after CI green |
+| Merge | [branching strategy](../branching-strategy.md) | Squash/merge to integration branch after local verification |
 
 ---
 
@@ -100,7 +100,7 @@ Use [.github/pull_request_template.md](../../.github/pull_request_template.md) w
 **Doc:** [branching strategy](../branching-strategy.md)
 
 1. PR targets **`develop/design-review-assistant`** (not `main`).
-2. All CI checks green (see [CI workflows](#ci-workflows)).
+2. Local verification complete (see [Verification](#verification-ci-temporarily-disabled)).
 3. Required human reviews complete.
 4. Merge (squash or merge commit per repo settings).
 5. Delete the feature branch after merge.
