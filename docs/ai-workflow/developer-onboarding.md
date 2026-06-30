@@ -153,18 +153,18 @@ If hooks modify files, stage the fixes and commit again.
 
 See [development.md](../../development.md) for additional pre-commit details.
 
-### CI workflows
+### Verification (CI temporarily disabled)
 
-Pull requests run [.github/workflows/ci.yml](../../.github/workflows/ci.yml):
+GitHub Actions CI workflows are **temporarily disabled**. Run verification locally before opening or merging a PR:
 
-| Job | Checks |
-|-----|--------|
-| `ruff` | Ruff lint and format (via pre-commit hooks) |
-| `backend-tests` | Backend test suite with coverage |
+| Check | Command |
+|-------|---------|
+| Lint & format | `cd backend && uv run ruff check --force-exclude . && uv run ruff format --check --force-exclude .` |
+| Pre-commit | `uv run prek run --all-files` (from repo root) |
+| Backend tests | `bash ./scripts/test.sh` |
+| Design tests only | `docker compose exec backend bash scripts/tests-start.sh tests/api/routes/test_designs.py -v` |
 
-Additional workflows (Playwright, Docker Compose, etc.) run when relevant paths change. CI is the **final harness** — local passes do not replace CI green.
-
-The CI workflow is structured for future jobs (type checking, frontend validation) — see commented placeholders in the workflow file.
+Re-enable CI by restoring workflows under `.github/workflows/` when the pipeline is ready.
 
 ---
 
