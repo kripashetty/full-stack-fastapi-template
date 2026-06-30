@@ -13,7 +13,7 @@ Project foundation and engineering workflow integration before product developme
 | Product vision | In progress | [docs/vision.md](vision.md) |
 | Roadmap | In progress | This document |
 | Developer onboarding | In progress | [docs/ai-workflow/developer-onboarding.md](ai-workflow/developer-onboarding.md) |
-| Quality gates (pre-commit, CI) | In progress | [.pre-commit-config.yaml](../.pre-commit-config.yaml), [.github/workflows/ci.yml](../.github/workflows/ci.yml) |
+| Quality gates (pre-commit, local verification) | In progress | [.pre-commit-config.yaml](../.pre-commit-config.yaml); CI workflows temporarily removed |
 | PR template | In progress | [.github/pull_request_template.md](../.github/pull_request_template.md) |
 | Harness strategy updates | In progress | [docs/ai-workflow/harness-strategy.md](ai-workflow/harness-strategy.md) |
 | Project foundation | Open | [Issue #3](https://github.com/kripashetty/full-stack-fastapi-template/issues/3) |
