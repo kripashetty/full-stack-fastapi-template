@@ -1,17 +1,9 @@
 import uuid
 from datetime import datetime, timezone
-from enum import Enum
 
 from pydantic import EmailStr
 from sqlalchemy import DateTime
 from sqlmodel import Field, Relationship, SQLModel
-
-
-class DesignStatus(str, Enum):
-    DRAFT = "draft"
-    IN_REVIEW = "in_review"
-    APPROVED = "approved"
-    REJECTED = "rejected"
 
 
 def get_datetime_utc() -> datetime:
@@ -62,7 +54,6 @@ class User(UserBase, table=True):
         sa_type=DateTime(timezone=True),  # type: ignore
     )
     items: list["Item"] = Relationship(back_populates="owner", cascade_delete=True)
-    designs: list["Design"] = Relationship(back_populates="owner", cascade_delete=True)
 
 
 # Properties to return via API, id is always required
@@ -114,45 +105,6 @@ class ItemPublic(ItemBase):
 
 class ItemsPublic(SQLModel):
     data: list[ItemPublic]
-    count: int
-
-
-class DesignBase(SQLModel):
-    title: str = Field(min_length=1, max_length=255)
-    description: str | None = Field(default=None, max_length=4096)
-
-
-class DesignCreate(DesignBase):
-    pass
-
-
-class DesignUpdate(SQLModel):
-    title: str | None = Field(default=None, min_length=1, max_length=255)
-    description: str | None = Field(default=None, max_length=4096)
-
-
-class Design(DesignBase, table=True):
-    id: uuid.UUID = Field(default_factory=uuid.uuid4, primary_key=True)
-    status: DesignStatus = Field(default=DesignStatus.DRAFT)
-    created_at: datetime | None = Field(
-        default_factory=get_datetime_utc,
-        sa_type=DateTime(timezone=True),  # type: ignore
-    )
-    owner_id: uuid.UUID = Field(
-        foreign_key="user.id", nullable=False, ondelete="CASCADE"
-    )
-    owner: User | None = Relationship(back_populates="designs")
-
-
-class DesignPublic(DesignBase):
-    id: uuid.UUID
-    status: DesignStatus
-    owner_id: uuid.UUID
-    created_at: datetime | None = None
-
-
-class DesignsPublic(SQLModel):
-    data: list[DesignPublic]
     count: int
 
 
